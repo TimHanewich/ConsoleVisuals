@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Tim Hanewich</Authors>
+    <Description>Library for generating visuals to be used in console applications</Description>
+    <Copyright>Tim Hanewich</Copyright>
+    <RepositoryUrl>https://github.com/TimHanewich/ConsoleVisuals</RepositoryUrl>
+    <PackageTags>console,command line,shell,visuals,console visuals,shell visual</PackageTags>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+    <FileVersion>0.0.0.0</FileVersion>
+    <Version>0.1.0</Version>
+    <PackageIcon>CmdIcon.jpg</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="CmdIcon.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
