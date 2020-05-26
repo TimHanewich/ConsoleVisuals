@@ -7,5 +7,16 @@ namespace ConsoleVisuals
         public string Text { get; set; }
         public ConsoleColor ForegroundColor { get; set; }
         public CellContentAlignment Alignment { get; set; }
+
+        public TableCellContent Copy()
+        {
+            TableCellContent ToReturn = new TableCellContent();
+
+            ToReturn.Text = Text;
+            ToReturn.ForegroundColor = ForegroundColor;
+            ToReturn.Alignment = Alignment;
+
+            return ToReturn;
+        }
     }
 }

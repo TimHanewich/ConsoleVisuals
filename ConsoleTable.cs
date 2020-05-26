@@ -61,7 +61,15 @@ namespace ConsoleVisuals
 
             //Create a new list to print from
             List<TableCellContent[]> ToPrint = new List<TableCellContent[]>();
-            ToPrint.AddRange(Rows);
+            foreach (TableCellContent[] tccs in Rows)
+            {
+                List<TableCellContent> ThisRow = new List<TableCellContent>();
+                foreach (TableCellContent tcc in tccs)
+                {
+                    ThisRow.Add(tcc.Copy());
+                }
+                ToPrint.Add(ThisRow.ToArray());
+            }
 
 
             //Add the header to the rows to print
