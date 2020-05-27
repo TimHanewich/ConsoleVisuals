@@ -8,6 +8,13 @@ namespace ConsoleVisuals
         public ConsoleColor ForegroundColor { get; set; }
         public CellContentAlignment Alignment { get; set; }
 
+        public TableCellContent()
+        {
+            Text = null;
+            ForegroundColor = Console.ForegroundColor;
+            Alignment = CellContentAlignment.Left;
+        }
+        
         public TableCellContent Copy()
         {
             TableCellContent ToReturn = new TableCellContent();
@@ -18,5 +25,7 @@ namespace ConsoleVisuals
 
             return ToReturn;
         }
+
+        
     }
 }
