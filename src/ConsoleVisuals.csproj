@@ -11,9 +11,16 @@
     <FileVersion>0.0.0.0</FileVersion>
     <Version>0.3.0</Version>
     <PackageIcon>CmdIcon.jpg</PackageIcon>
+    <PackageLicenseFile>license.md</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/TimHanewich/ConsoleVisuals</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\license.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <None Include="CmdIcon.jpg">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
