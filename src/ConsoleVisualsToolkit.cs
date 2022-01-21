@@ -4,6 +4,11 @@ namespace ConsoleVisuals
 {
     public class ConsoleVisualsToolkit
     {
+        public static void WriteLine(string msg)
+        {
+            Console.WriteLine(msg);
+        }
+
         //Change only the foreground
         public static void WriteLine(string msg, ConsoleColor foreground)
         {
