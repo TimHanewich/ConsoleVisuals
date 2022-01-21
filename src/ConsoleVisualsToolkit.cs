@@ -2,7 +2,7 @@ using System;
 
 namespace ConsoleVisuals
 {
-    public class ConsoleVisuals
+    public class ConsoleVisualsToolkit
     {
         //Change only the foreground
         public static void WriteLine(string msg, ConsoleColor foreground)
