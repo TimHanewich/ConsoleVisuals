@@ -4,21 +4,24 @@ namespace ConsoleVisuals
 {
     public class ConsoleVisualsToolkit
     {
-        public static void WriteLine(string msg)
+
+        #region "write"
+
+        public static void Write(string msg)
         {
-            Console.WriteLine(msg);
+            Console.Write(msg);
         }
 
         //Change only the foreground
-        public static void WriteLine(string msg, ConsoleColor foreground)
+        public static void Write(string msg, ConsoleColor foreground)
         {
             ConsoleColor oc = Console.ForegroundColor;
             Console.ForegroundColor = foreground;
-            Console.WriteLine(msg);
+            Console.Write(msg);
             Console.ForegroundColor = oc;
         }
 
-        public static void WriteLine(string msg, ConsoleColor foreground, ConsoleColor background)
+        public static void Write(string msg, ConsoleColor foreground, ConsoleColor background)
         {
             ConsoleColor orgF = Console.ForegroundColor;
             ConsoleColor orgB = Console.BackgroundColor;
@@ -26,10 +29,38 @@ namespace ConsoleVisuals
             Console.ForegroundColor = foreground;
             Console.BackgroundColor = background;
 
-            Console.WriteLine(msg);
+            Console.Write(msg);
 
             Console.ForegroundColor = orgF;
             Console.BackgroundColor = orgB;
         }
+
+        #endregion
+
+        #region "write line"
+
+        public static void WriteLine(string msg)
+        {
+            Write(msg + Environment.NewLine);
+        }
+
+        public static void WriteLine(string msg, ConsoleColor foreground)
+        {
+            Write(msg + Environment.NewLine, foreground);
+        }
+
+        public static void WriteLine(string msg, ConsoleColor foreground, ConsoleColor background)
+        {
+            Write(msg + Environment.NewLine, foreground, background);
+        }
+
+        
+    
+
+        #endregion
+
+
+        
+    
     }
 }
