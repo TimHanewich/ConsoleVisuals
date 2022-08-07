@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ConsoleVisuals
 {
@@ -174,6 +176,46 @@ namespace ConsoleVisuals
 
             }
 
+        }
+
+        public static ConsoleTable FromJSON(JArray ja)
+        {
+            //Get a list of the columns that will be used
+            List<string> columns = new List<string>();
+            foreach (JObject jo in ja)
+            {
+                foreach (JProperty prop in jo.Properties())
+                {
+                    if (columns.Contains(prop.Name) == false)
+                    {
+                        columns.Add(prop.Name);
+                    }
+                }
+            }
+
+            //Create the console table
+            ConsoleTable ToReturn = ConsoleTable.Create(columns.ToArray());
+
+            //Add each row
+            foreach (JObject jo in ja)
+            {
+                List<string> ThisRow = new List<string>();
+                foreach (string column in columns)
+                {
+                    JProperty prop = jo.Property(column);
+                    if (prop != null)
+                    {
+                        ThisRow.Add(prop.Value.ToString());
+                    }
+                    else
+                    {
+                        ThisRow.Add("");
+                    }
+                }
+                ToReturn.AddRow(ThisRow.ToArray()); //Add the row
+            }
+
+            return ToReturn;
         }
 
     }
