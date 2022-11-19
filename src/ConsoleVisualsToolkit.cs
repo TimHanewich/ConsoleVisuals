@@ -58,9 +58,6 @@ namespace ConsoleVisuals
     
 
         #endregion
-
-
         
-    
     }
 }
