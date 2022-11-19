@@ -58,6 +58,42 @@ namespace ConsoleVisuals
     
 
         #endregion
-        
+
+        #region "write ConsoleText"
+
+        public static void Write(ConsoleText text)
+        {
+            if (text.Foreground == null)
+            {
+                Write(text.Text);
+            }
+            if (text.Foreground != null && text.Background == null)
+            {
+                Write(text.Text, text.Foreground.Value);
+            }
+            else
+            {
+                Write(text.Text, text.Foreground.Value, text.Background.Value);
+            }
+        }
+
+        public static void WriteLine(ConsoleText text)
+        {
+            if (text.Foreground == null)
+            {
+                WriteLine(text.Text);
+            }
+            if (text.Foreground != null && text.Background == null)
+            {
+                WriteLine(text.Text, text.Foreground.Value);
+            }
+            else
+            {
+                WriteLine(text.Text, text.Foreground.Value, text.Background.Value);
+            }
+        }
+
+        #endregion
+
     }
 }
