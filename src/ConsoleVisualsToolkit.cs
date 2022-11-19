@@ -63,7 +63,7 @@ namespace ConsoleVisuals
 
         public static void Write(ConsoleText text)
         {
-            if (text.Foreground == null)
+            if (text.Foreground == null && text.Background == null)
             {
                 Write(text.Text);
             }
@@ -71,7 +71,7 @@ namespace ConsoleVisuals
             {
                 Write(text.Text, text.Foreground.Value);
             }
-            else
+            else if (text.Foreground != null && text.Background != null)
             {
                 Write(text.Text, text.Foreground.Value, text.Background.Value);
             }
